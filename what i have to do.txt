@@ -1,0 +1,100 @@
+🎯 Project Brief:
+Build a "Personal Dashboard" with multiple components, full state control, data rendering via .map, user interactivity, styling, and conditional logic.
+
+🔧 Core Requirements (All Must Be Met)
+✅ Structure & Component Hierarchy
+App (root)
+
+Header (e.g. shows current time or greeting)
+
+Navigation (conditionally highlights active section)
+
+Main
+
+Section: To-Do List
+
+Section: Joke Viewer
+
+Section: Contact Cards
+
+Footer
+
+✅ To-Do Section
+Checkbox list with task text
+
+Toggle completed state
+
+Strike-through styling when completed
+
+Task data stored in state
+
+Use .map() to render
+
+✅ Joke Viewer Section
+Display one joke at a time
+
+Jokes come from an array (props)
+
+“Next Joke” button cycles through
+
+If question is missing, only render punchline
+
+✅ Contact Card Section
+Render contact cards from array
+
+Each card displays image, name, phone, email
+
+Use .map() + props
+
+Style with a clean grid layout
+
+🧠 Logic & State
+Store data in state, not external variables
+
+Each section must render dynamically based on data
+
+Navigation sets state to control active section
+
+Conditional rendering for hiding/showing sections
+
+🖌 Styling
+Use CSS + className
+
+Use inline styles for at least one dynamic element
+
+Use camelCase in style objects
+
+📋 Bonus (Push Difficulty)
+Count completed tasks
+
+Button to clear all completed
+
+Responsive layout
+
+Dynamic greeting in Header based on time of day (Good morning, etc.)
+
+🚫 Not Allowed (yet)
+No hooks
+
+No context
+
+No external packages
+
+No async data
+
+No routing
+
+Why This Works
+Every line must use what you know:
+
+Functional + class components
+
+State + props
+
+Mapping, conditionals, styling
+
+Event handling
+
+File structure discipline
+
+Want me to scaffold the component files or give sample data?
