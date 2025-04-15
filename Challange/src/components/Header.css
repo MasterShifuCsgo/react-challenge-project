@@ -1,0 +1,20 @@
+.navbar-center {
+  display: flex;
+}
+
+.time{
+  color: white;
+  font-size: larger;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.navbar-item.is-active {
+  background-color: #5983bb8a;
+  color: white;
+  
+}

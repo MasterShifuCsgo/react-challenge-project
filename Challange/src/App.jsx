@@ -1,15 +1,53 @@
 import React from "react"
+import Header from './components/Header.jsx'
+import TodoList from './components/TodoList.jsx'
+import JokeViewer from './components/JokeViewer.jsx'
+import ContactCards from './components/ContactCards.jsx'
 
 
 
+class App extends React.Component{
+    constructor(){
+      super()
+      this.state = {
+        sections: ['To-Do List', 'Joke Viewer', 'Contact Cards'],
+        currentSection: 'To-Do List'
+      }
+      
+      this.setCurrentSection = this.setCurrentSection.bind(this);
 
-function App() {
+    }  
 
-  return (
+    setCurrentSection(event){
+      const {name} = event.target;    
+      this.setState({currentSection: name});
+    }
+
+    render(){        
+
+      // since no routing, it filters through the list and looks for the one that matches the searched one.      
+      let display;
+        if(this.state.currentSection === 'To-Do List'){
+          display = <TodoList></TodoList>
+        }
+        
+        if(this.state.currentSection === 'Joke Viewer'){
+          display = <JokeViewer></JokeViewer>
+        }
+        
+        if(this.state.currentSection === 'Contact Cards'){
+          display = <ContactCards></ContactCards>
+        }
+
+    return (
     <>
-      <h1></h1>
+      <Header sections={this.state.sections} activeSession={this.state.currentSection} changeSession={this.setCurrentSection}></Header>
+      <div className="container">        
+          {display}
+      </div>
     </>
-  )
+    )
+  }
 }
 
 export default App
