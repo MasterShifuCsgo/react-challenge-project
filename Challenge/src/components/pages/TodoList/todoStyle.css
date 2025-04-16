@@ -1,0 +1,10 @@
+
+
+.todo-element{
+  display: flex; 
+}
+
+.is-checked{
+  color: rgba(255, 255, 255, 0.247);
+  text-decoration: line-through;
+}

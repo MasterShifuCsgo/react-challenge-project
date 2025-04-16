@@ -1,9 +1,8 @@
 import React from "react"
-import Header from './components/Header.jsx'
-import TodoList from './components/TodoList.jsx'
-import JokeViewer from './components/JokeViewer.jsx'
-import ContactCards from './components/ContactCards.jsx'
-
+import Header from './components/Header/Header.jsx'
+import TodoList from './components/pages/TodoList/TodoList.jsx'
+import JokeViewer from './components/pages/JokeViewer/JokeViewer.jsx'
+import ContactCards from './components/pages/ContactCards/ContactCards.jsx'
 
 
 class App extends React.Component{
@@ -36,13 +35,16 @@ class App extends React.Component{
         }
         
         if(this.state.currentSection === 'Contact Cards'){
-          display = <ContactCards></ContactCards>
+          display = <ContactCards></ContactCards>          
         }
 
     return (
     <>
       <Header sections={this.state.sections} activeSession={this.state.currentSection} changeSession={this.setCurrentSection}></Header>
-      <div className="container">        
+      <div className="container">
+          <div className="section">
+            <h1 className="title">{this.state.currentSection}</h1>  
+          </div>      
           {display}
       </div>
     </>
