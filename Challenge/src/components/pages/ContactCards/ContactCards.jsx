@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 
-class ContactCards extends Component {
-  render() {
-    return (
-      <div>
-        
-          
+import Contacts from './Contacts'
+import Card from './Card'
 
+class ContactCards extends Component {
+
+  constructor(){
+    super()    
+    this.state = {
+      contacts: Contacts
+    }
+  }
+
+  render() {
+
+    const contactCards = this.state.contacts.map((contact) =>{      
+      return <Card key={contact.id} contact={contact}></Card>
+    })
+
+    
+
+    return (
+      <div className='columns is-multiline'>                          
+        {contactCards}
       </div>
     );
   }

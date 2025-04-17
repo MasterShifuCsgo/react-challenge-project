@@ -7,13 +7,35 @@ class Header extends React.Component{
     super()
     this.state = {
       currentTime: new Date().toLocaleTimeString(),
+      greeting: '',
     }
   }
 
   componentDidMount(){
-    setInterval(() => {
-      this.setState({currentTime: new Date().toLocaleTimeString()})
+    
+    const time = new Date().getHours();
+    let greeting;
+    if( 5 <= time < 12 ){
+      greeting = "Good morning";          
+    }
+    if(12 <= time < 17){
+      greeting = "Good afternoon";
+    }
+    if(17 <= time < 21){
+      greeting = "Good evening";
+    }
+    if(21 <= time < 5){
+      greeting = "Good night";
+    } 
+
+    setInterval(() => {                     
+      this.setState({currentTime: new Date().toLocaleTimeString(), greeting: greeting})
+
     },1000)
+
+
+
+
   }
 
   render() {
@@ -32,8 +54,9 @@ class Header extends React.Component{
       <div className="navbar-menu">
       <div className="navbar-start">
       {navbarItems}
-      </div>
+      </div>      
         <div className="navbar-end time">
+          <p>{this.state.greeting}</p>
           <p>{this.state.currentTime}</p>
         </div>
       </div>

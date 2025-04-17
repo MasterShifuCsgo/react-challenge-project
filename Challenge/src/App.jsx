@@ -10,7 +10,7 @@ class App extends React.Component{
       super()
       this.state = {
         sections: ['To-Do List', 'Joke Viewer', 'Contact Cards'],
-        currentSection: 'To-Do List'
+        currentSection: ''
       }
       
       this.setCurrentSection = this.setCurrentSection.bind(this);
@@ -34,9 +34,11 @@ class App extends React.Component{
           display = <JokeViewer></JokeViewer>
         }
         
-        if(this.state.currentSection === 'Contact Cards'){
+        if(this.state.currentSection === 'Contact Cards'){          
           display = <ContactCards></ContactCards>          
         }
+
+        
 
     return (
     <>
